@@ -1,57 +1,35 @@
-<<<<<<< HEAD
+
 # playwright-snipeit-automation
 Playwright (.NET) automation for Snipe-IT demo application
-=======
-\# Playwright Snipe-IT Automation (.NET)
+
+This project covers  Playwright automation test for the Snipe-IT demo application.
 
 
 
-This project contains an end-to-end Playwright automation test for the Snipe-IT demo application.
+## Tech Stack
+
+.NET
+
+Playwright
+
+NUnit
 
 
 
-\## Scenario Covered
+## Prerequisites
 
-\- Login to Snipe-IT demo
+ .NET SDK
 
-\- Create a MacBook Pro 13" asset
-
-\- Set status to Ready to Deploy
-
-\- Check out the asset to a user
-
-\- Verify asset in the assets list
-
-\- Validate asset details and history
+ Playwright browsers installed
 
 
 
-\## Tech Stack
+## Setup & Run
 
-\- .NET
-
-\- Playwright
-
-\- NUnit
-
-
-
-\## Prerequisites
-
-\- .NET SDK
-
-\- Playwright browsers installed
-
-
-
-\## Setup \& Run
-
-```bash
+bash
 
 dotnet restore
 
 dotnet test
 
 
-
->>>>>>> bc5464d (Initial Snipe-IT Playwright automation)
