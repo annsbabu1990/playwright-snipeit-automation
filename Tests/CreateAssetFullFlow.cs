@@ -76,9 +76,7 @@ public class CreateAssetFullFlow : TestSetup
 
         await Page.Locator("div.tab-pane#history").WaitForAsync(new() { Timeout = 30000 });
 
-        // =========================
-        // UPDATED: Validate History details (simplified)
-        // =========================
+       
         var historyRow = Page.Locator("div.tab-pane#history table tbody tr")
                              .Filter(new() { HasText = assetTag })
                              .First;
@@ -87,21 +85,21 @@ public class CreateAssetFullFlow : TestSetup
 
         var historyText = (await historyRow.InnerTextAsync()).Trim();
 
-        // Must-have validations
+   
         Assert.That(historyText, Does.Contain(assetTag));
         Assert.That(historyText, Does.Contain("create new").IgnoreCase);
 
-        // Nice-to-have (don’t fail if not present)
+     
         if (!historyText.Contains("checkout", StringComparison.OrdinalIgnoreCase))
         {
             TestContext.WriteLine($"NOTE: 'checkout' not found in History row. Actual row: {historyText}");
         }
 
-        // Optional: ensure the asset link exists
+     
         var historyAssetLink = historyRow.Locator("a[href*='/hardware/']").First;
         await historyAssetLink.WaitForAsync(new() { Timeout = 30000 });
 
-        // Optional: user link might not exist depending on demo behaviour
+        
         var userLinks = historyRow.Locator("a[href*='/users/']");
         if (await userLinks.CountAsync() > 0)
         {
