@@ -29,13 +29,13 @@ public class CreateAssetFullFlow : TestSetup
         // Assign to user
         await PickRandomUser();
 
-        await Page.PauseAsync();
+        //await Page.PauseAsync();
 
         var tagInput = Page.Locator("#asset_tag");
         var assetTag = await tagInput.InputValueAsync();
         TestContext.WriteLine($"Asset Tag: {assetTag}");
 
-        await Page.PauseAsync();
+       // await Page.PauseAsync();
 
         // Save
         await Page.Locator("#submit_button").ClickAsync();
